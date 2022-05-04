@@ -1,7 +1,7 @@
 import React from "react";
 const Introduce = () => {
   return (
-    <section className="Introduce">
+    <section className="Introduce container">
       <h2 className="blind">자기소개</h2>
       <div className="imgWrapper"></div>
       <section className="descWrapper">

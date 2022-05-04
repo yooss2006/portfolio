@@ -1,12 +1,14 @@
-import Card from "./components/Card";
 import "./css/common.css";
-import Introduce from "./components/Introduce";
 import { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import Card from "./components/Card";
+import Introduce from "./components/Introduce";
 import Skill from "./components/Skill";
 import Project from "./components/Project";
 import Experience from "./components/Experience";
 function App() {
+  const navigate = useNavigate();
+
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isCardOn, setIsCardOn] = useState(true);
 
@@ -37,22 +39,30 @@ function App() {
         <h1>유순상의 포트폴리오</h1>
         <nav>
           <ul>
-            <li>Introduce</li>
-            <li>Skill</li>
-            <li>Project</li>
-            <li>Experience</li>
+            <li>
+              <button onClick={() => navigate("/")}>Introduce</button>
+            </li>
+            <li>
+              <button onClick={() => navigate("/skill")}>Skill</button>
+            </li>
+            <li>
+              <button onClick={() => navigate("/project")}>Project</button>
+            </li>
+            <li>
+              <button onClick={() => navigate("/experience")}>
+                Experience
+              </button>
+            </li>
           </ul>
         </nav>
       </header>
       <main>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Introduce />} />
-            <Route path="/skill" element={<Skill />} />
-            <Route path="/project" element={<Project />} />
-            <Route path="/experience" element={<Experience />} />
-          </Routes>
-        </BrowserRouter>
+        <Routes>
+          <Route path="/" exact={true} element={<Introduce />} />
+          <Route path="/skill" element={<Skill />} />
+          <Route path="/project" element={<Project />} />
+          <Route path="/experience" element={<Experience />} />
+        </Routes>
       </main>
       <footer>
         <p>Copyright by YouSoonSang. 2022</p>

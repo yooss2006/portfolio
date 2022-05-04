@@ -32,7 +32,6 @@ $fontHallym: "HallymGothic-Regular";
 $blue: #0554f2, #0540f2, #0528f2;
 $white: #f2f2f2;
 $black: #010326;
-$imgUrl: "../assets/";
 
 //html 요소의 범위 표시
 @mixin line {
@@ -62,4 +61,13 @@ h3,
 h4 {
   font-family: $title;
 }
-@import "app", "card", "introduce";
+
+.container {
+  height: 100%;
+  padding: 6em 0 1em;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+@import "app", "card", "introduce", "skill";

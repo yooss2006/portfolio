@@ -143,6 +143,15 @@ h4 {
   font-family: "MaplestoryOTFBold";
 }
 
+.container {
+  height: 100%;
+  padding: 6em 0 1em;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+
 .App {
   background-color: #f2f2f2;
 }
@@ -410,12 +419,6 @@ q:after {
 }
 
 .Introduce {
-  height: 100%;
-  padding: 6em 0 1em;
-  box-sizing: border-box;
-  overflow: hidden;
-  position: relative;
-  z-index: 10;
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -480,6 +483,44 @@ q:after {
 .Introduce .descWrapper .descTitle p {
   margin: 0.2em 0;
   line-height: 1.5;
+}
+
+.Skill {
+  border-left: 2px double #010326;
+  border-right: 2px double #010326;
+}
+.Skill h2 {
+  font-size: 1.25em;
+  text-align: center;
+}
+.Skill .skillBoard {
+  width: 90%;
+  margin: 1em auto 0;
+  border: 2px double #010326;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.Skill .skillBoard button {
+  width: 32%;
+  margin: 0 1em;
+}
+.Skill .skillBoard img {
+  width: 100%;
+}
+.Skill .skillBoard img.reactImg {
+  max-width: 49%;
+}
+.Skill .skillDesc {
+  width: 90%;
+  margin: 1em auto 0;
+}
+.Skill .skillDesc p {
+  margin: 0.2em 0;
+}
+.Skill .skillDesc p::before {
+  content: " - ";
 }
 
 /*# sourceMappingURL=common.css.map */

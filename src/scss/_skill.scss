@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+.Skill {
+  border-left: 2px double $black;
+  border-right: 2px double $black;
+  h2 {
+    font-size: 1.25em;
+    text-align: center;
+  }
+
+  .skillBoard {
+    width: 90%;
+    margin: 1em auto 0;
+    border: 2px double $black;
+    button {
+      width: 32%;
+      margin: 0 1em;
+    }
+    @include flex($a: center);
+    img {
+      width: 100%;
+      &.reactImg {
+        max-width: 49%;
+      }
+    }
+  }
+
+  .skillDesc {
+    width: 90%;
+    margin: 1em auto 0;
+    p {
+      margin: 0.2em 0;
+      &::before {
+        content: " - ";
+      }
+    }
+  }
+}

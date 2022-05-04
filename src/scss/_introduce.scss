@@ -1,12 +1,6 @@
 @import "reset";
 
 .Introduce {
-  height: 100%;
-  padding: 6em 0 1em;
-  box-sizing: border-box;
-  overflow: hidden;
-  position: relative;
-  z-index: 10;
   @include flex($j: center);
   .imgWrapper {
     flex-basis: 40%;
