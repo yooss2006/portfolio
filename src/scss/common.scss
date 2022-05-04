@@ -17,17 +17,17 @@
   font-weight: normal;
   font-style: normal;
 }
-//g마켓 산스
+//한림 고딕체
 @font-face {
-  font-family: "GmarketSansMedium";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
-    format("woff");
-  font-weight: normal;
+  font-family: "HallymGothic-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2204@1.0/HallymGothic-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
   font-style: normal;
 }
 $title: "MaplestoryOTFBold";
 $fontMemories: "yleeMortalHeartImmortalMemory";
-$fontGmarketSansMedium: "GmarketSansMedium";
+$fontHallym: "HallymGothic-Regular";
 
 $blue: #0554f2, #0540f2, #0528f2;
 $white: #f2f2f2;
@@ -52,7 +52,7 @@ $imgUrl: "../assets/";
 }
 
 body {
-  font-family: $fontMemories;
+  font-family: $fontHallym;
   color: #010326;
 }
 

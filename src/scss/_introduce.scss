@@ -1,5 +1,67 @@
 @import "reset";
 
 .Introduce {
-  height: 100vh;
+  height: 100%;
+  padding: 6em 0 1em;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+  @include flex($j: center);
+  .imgWrapper {
+    flex-basis: 40%;
+    margin: 0 1em;
+    border: 2px double $black;
+    box-sizing: border-box;
+    background: url("../assets/사진.jpg") no-repeat center center/cover;
+  }
+  .descWrapper {
+    flex-basis: 40%;
+    margin: 0 1em;
+    @include flex();
+    flex-direction: column;
+    blockquote {
+      padding: 1em;
+      border: 2px double $black;
+      box-sizing: border-box;
+      flex-basis: 30%;
+      background: url("../assets/grass.png") no-repeat right 10% top 20%/50px;
+      p {
+        font-size: 1em;
+        line-height: 1.7;
+      }
+      cite {
+        margin-top: 1em;
+        font-size: 1em;
+        display: block;
+        font-family: $fontMemories;
+        text-align: right;
+        &::after,
+        &::before {
+          content: " - ";
+        }
+      }
+    }
+    .descTitle {
+      flex-basis: 60%;
+      padding: 1em;
+      @include flex($a: start, $j: center);
+      flex-direction: column;
+      text-align: left;
+      box-sizing: border-box;
+      border: 2px double $black;
+      h3 {
+        font-size: 1.25em;
+        margin-bottom: 1em;
+        &::after,
+        &:before {
+          content: "\0022";
+        }
+      }
+      p {
+        margin: 0.2em 0;
+        line-height: 1.5;
+      }
+    }
+  }
 }

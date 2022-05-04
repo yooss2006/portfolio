@@ -54,6 +54,9 @@ function App() {
           </Routes>
         </BrowserRouter>
       </main>
+      <footer>
+        <p>Copyright by YouSoonSang. 2022</p>
+      </footer>
     </div>
   );
 }
