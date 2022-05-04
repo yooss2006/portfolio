@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+.header {
+  width: 100%;
+  padding: 1em;
+  box-sizing: border-box;
+  @include flex($a: center);
+  position: fixed;
+  top: 0;
+  left: 0;
+  nav {
+    flex-basis: 40%;
+  }
+  ul {
+    @include flex($a: center);
+    font-size: 1.5em;
+    color: nth($blue, 3);
+  }
+}
+
+main {
+  height: 1vh;
+}

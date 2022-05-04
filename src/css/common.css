@@ -1,0 +1,386 @@
+@charset "UTF-8";
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+button,
+blockquote,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+mark {
+  background-color: transparent;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b,
+th {
+  font-weight: inherit;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+i,
+em,
+address {
+  font-style: inherit;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid red;
+}
+
+fieldset {
+  border: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+textarea,
+input {
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.blind,
+hr,
+legend {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+q:before,
+q:after {
+  content: "";
+}
+
+@font-face {
+  font-family: "yleeMortalHeartImmortalMemory";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/yleeMortalHeartImmortalMemory.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MaplestoryOTFBold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.hide {
+  display: none;
+}
+
+body {
+  font-family: "yleeMortalHeartImmortalMemory";
+  color: #010326;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "MaplestoryOTFBold";
+}
+
+.header {
+  width: 100%;
+  padding: 1em;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.header nav {
+  flex-basis: 40%;
+}
+.header ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  font-size: 1.5em;
+  color: #0528f2;
+}
+
+main {
+  height: 1vh;
+}
+
+.Card {
+  height: 100vh;
+  position: relative;
+  font-size: 1.25em;
+}
+.Card::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../assets/background.jpg) bottom center/cover;
+  z-index: -1;
+}
+.Card .businessCard {
+  width: 50%;
+  min-height: 15em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: all 0.5s;
+  transform-style: preserve-3d;
+}
+.Card .businessCard .commonCard {
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+  position: absolute;
+  box-sizing: border-box;
+  box-shadow: 10px 10px 20px 1px rgba(0, 0, 0, 0.63);
+}
+.Card .businessCard .front {
+  backface-visibility: hidden;
+  background: url("../assets/증명사진.jpg") #f2f2f2 no-repeat right 1em center/10em;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+.Card .businessCard header {
+  margin-top: 3.5em;
+}
+.Card .businessCard header h3 {
+  font-size: 1.5em;
+  font-family: "yleeMortalHeartImmortalMemory";
+}
+.Card .businessCard header h3::after {
+  content: " / YouSoonSang";
+}
+.Card .businessCard header h3::before {
+  content: "";
+  width: 3em;
+  height: 2.66em;
+  background: url("../assets/sign.png") no-repeat center/contain;
+  position: absolute;
+  top: 1.53em;
+  left: 7.23em;
+}
+.Card .businessCard header p {
+  font-size: 1.25em;
+  margin: 1em 0.5em 0;
+}
+.Card .businessCard .address {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  margin: 0 0.5em 0.5em;
+}
+.Card .businessCard .address li:nth-child(2) {
+  margin: 0 1em;
+}
+.Card .businessCard .address li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.Card .businessCard .address li svg {
+  width: 1.2em;
+  height: 1.2em;
+  color: #010326;
+}
+.Card .back {
+  background: url("../assets/증명사진2.png") #f2f2f2 no-repeat right 1em center/10em;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+.Card .back .intro {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  height: 100%;
+  flex-direction: column;
+  color: #010326;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+button,
+blockquote,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+mark {
+  background-color: transparent;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b,
+th {
+  font-weight: inherit;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+i,
+em,
+address {
+  font-style: inherit;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid red;
+}
+
+fieldset {
+  border: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+textarea,
+input {
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.blind,
+hr,
+legend {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+q:before,
+q:after {
+  content: "";
+}
+
+.Introduce {
+  height: 100vh;
+}
+
+/*# sourceMappingURL=common.css.map */
