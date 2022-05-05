@@ -147,7 +147,7 @@ h4 {
   height: 100%;
   padding: 6em 0 1em;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: scroll;
   position: relative;
   z-index: 10;
 }
@@ -172,6 +172,9 @@ h4 {
   left: 0;
   z-index: 20;
 }
+.header h1 img {
+  height: 4em;
+}
 .header nav {
   flex-basis: 40%;
   min-width: 18.75em;
@@ -184,6 +187,9 @@ h4 {
   font-size: 1.5em;
   color: #010326;
   font-family: "yleeMortalHeartImmortalMemory";
+}
+.header ul li:hover {
+  color: #0528f2;
 }
 
 main {
@@ -497,30 +503,42 @@ q:after {
   width: 90%;
   margin: 1em auto 0;
   border: 2px double #010326;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
 }
 .Skill .skillBoard button {
-  width: 32%;
   margin: 0 1em;
 }
 .Skill .skillBoard img {
   width: 100%;
 }
-.Skill .skillBoard img.reactImg {
-  max-width: 49%;
-}
 .Skill .skillDesc {
   width: 90%;
   margin: 1em auto 0;
+  padding: 1em;
+  position: relative;
+  box-sizing: border-box;
+  border: 7px solid burlywood;
+  background-color: #2c3e36;
 }
 .Skill .skillDesc p {
-  margin: 0.2em 0;
+  margin: 0.5em 0;
+  color: #f2f2f2;
 }
 .Skill .skillDesc p::before {
   content: " - ";
+}
+.Skill .skillDesc p::after {
+  content: "";
+  width: 3.125em;
+  height: 0.625em;
+  background-color: #f2f2f2;
+  position: absolute;
+  right: 30%;
+  bottom: 0;
 }
 
 /*# sourceMappingURL=common.css.map */

@@ -6,6 +6,9 @@ import Introduce from "./components/Introduce";
 import Skill from "./components/Skill";
 import Project from "./components/Project";
 import Experience from "./components/Experience";
+
+import logo from "./assets/logo.png";
+
 function App() {
   const navigate = useNavigate();
 
@@ -36,7 +39,9 @@ function App() {
     <div className="App">
       <Card scrollProgress={scrollProgress} />
       <header className="header">
-        <h1>유순상의 포트폴리오</h1>
+        <h1>
+          <img src={logo} alt="유순상의 포트폴리오" />
+        </h1>
         <nav>
           <ul>
             <li>
