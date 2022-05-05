@@ -70,7 +70,7 @@ function App() {
         </Routes>
       </main>
       <footer>
-        <p>Copyright by YouSoonSang. 2022</p>
+        <p>hello welcome yooss world. 2022</p>
       </footer>
     </div>
   );

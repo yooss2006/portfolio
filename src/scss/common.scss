@@ -69,5 +69,9 @@ h4 {
   overflow: scroll;
   position: relative;
   z-index: 10;
+  h2 {
+    font-size: 1.25em;
+    text-align: center;
+  }
 }
-@import "app", "card", "introduce", "skill";
+@import "app", "card", "introduce", "skill", "project";

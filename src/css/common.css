@@ -151,6 +151,10 @@ h4 {
   position: relative;
   z-index: 10;
 }
+.container h2 {
+  font-size: 1.25em;
+  text-align: center;
+}
 
 .App {
   background-color: #f2f2f2;
@@ -495,10 +499,6 @@ q:after {
   border-left: 2px double #010326;
   border-right: 2px double #010326;
 }
-.Skill h2 {
-  font-size: 1.25em;
-  text-align: center;
-}
 .Skill .skillBoard {
   width: 90%;
   margin: 1em auto 0;
@@ -539,6 +539,143 @@ q:after {
   position: absolute;
   right: 30%;
   bottom: 0;
+}
+
+.Project .buttonWrapper {
+  width: 75%;
+  min-height: 25em;
+  margin: 0 auto;
+  position: relative;
+}
+.Project .projectWrapper {
+  width: 85%;
+  height: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  border: 4px double #010326;
+  overflow: hidden;
+}
+.Project .projectWrapper .projectSlide {
+  width: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s all;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  z-index: 10;
+}
+.Project .projectWrapper .projectSlide .projectItem {
+  width: 50%;
+  height: 50%;
+  position: relative;
+  padding: 1em;
+  box-sizing: border-box;
+  font-size: 0.875em;
+}
+.Project .projectWrapper .projectSlide .projectItem h4 {
+  font-size: 1.3em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+.Project .projectWrapper .projectSlide .projectItem .flexWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+.Project .projectWrapper .projectSlide .projectItem dl {
+  margin-bottom: 0.4em;
+}
+.Project .projectWrapper .projectSlide .projectItem .oneLine {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.Project .projectWrapper .projectSlide .projectItem .oneLine dt {
+  white-space: nowrap;
+}
+.Project .projectWrapper .projectSlide .projectItem .oneLine dt:after {
+  content: " : ";
+}
+.Project .projectWrapper .projectSlide .projectItem .oneLine dd {
+  margin-left: 0.4em;
+}
+.Project .projectWrapper .projectSlide .projectItem .multiLine dt {
+  margin-bottom: 0.4em;
+}
+.Project .projectWrapper .projectSlide .projectItem .multiLine li {
+  line-height: 1.6;
+}
+.Project .projectWrapper .projectSlide .projectItem .multiLine li::before {
+  content: " - ";
+}
+.Project .projectWrapper .projectSlide .projectItem .simpleDesc {
+  width: 100%;
+  padding: 0.6em 0;
+  margin-bottom: 0.4em;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 10px;
+  color: #0528f2;
+  background-color: gainsboro;
+}
+.Project .projectWrapper .projectSlide .projectItem .skillStack {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.Project .projectWrapper .projectSlide .projectItem .skillStack li {
+  margin-right: 5px;
+}
+.Project .projectWrapper .projectSlide .projectItem .screen {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  transition: 0.3s all;
+}
+.Project .projectWrapper .projectSlide .projectItem .screen:hover {
+  opacity: 0;
+}
+.Project .projectBtn {
+  padding: 1em;
+  position: absolute;
+  z-index: 100;
+}
+.Project .projectBtn img {
+  width: 1.25em;
+  height: 2.5em;
+}
+.Project .projectBtn.top {
+  top: -1em;
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg);
+}
+.Project .projectBtn.bottom {
+  bottom: -1em;
+  left: 50%;
+  transform: translateX(-50%) rotate(-90deg);
+}
+.Project .projectBtn.left {
+  top: 50%;
+  left: 1.3em;
+  transform: translateY(-50%);
+}
+.Project .projectBtn.right {
+  top: 50%;
+  right: 1.3em;
+  transform: translateY(-50%) rotate(-180deg);
 }
 
 /*# sourceMappingURL=common.css.map */
