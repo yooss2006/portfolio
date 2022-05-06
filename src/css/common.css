@@ -318,116 +318,6 @@ footer {
   color: #010326;
 }
 
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-button,
-blockquote,
-fieldset {
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-mark {
-  background-color: transparent;
-  color: inherit;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: inherit;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-strong,
-b,
-th {
-  font-weight: inherit;
-}
-
-ul,
-ol,
-li {
-  list-style: none;
-}
-
-i,
-em,
-address,
-cite {
-  font-style: inherit;
-}
-
-table {
-  border-spacing: 0;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  border: 1px solid red;
-}
-
-fieldset {
-  border: none;
-}
-
-button {
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-  font-family: inherit;
-  font-size: inherit;
-  color: inherit;
-}
-
-textarea,
-input {
-  font-size: inherit;
-  font-family: inherit;
-}
-
-.blind,
-hr,
-legend {
-  position: absolute;
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-}
-
-q:before,
-q:after {
-  content: "";
-}
-
 .Introduce {
   display: flex;
   justify-content: center;
@@ -676,6 +566,56 @@ q:after {
   top: 50%;
   right: 1.3em;
   transform: translateY(-50%) rotate(-180deg);
+}
+
+.Experience h3 {
+  padding-bottom: 1em;
+  font-size: 1.25em;
+  text-align: center;
+  border-bottom: 2px double #010326;
+}
+.Experience section {
+  padding: 0 5em;
+  margin-bottom: 3em;
+}
+.Experience .study .studyItem {
+  margin-top: 2em;
+}
+.Experience .study .studyItem h4 {
+  font-size: 1.125em;
+  color: #0528f2;
+  margin-bottom: 0.5em;
+}
+.Experience .study .studyItem p {
+  padding: 0.5em 0.5em;
+  border-radius: 10px;
+  background-color: #010326;
+  color: #f2f2f2;
+  word-break: keep-all;
+}
+.Experience .study .studyItem ul {
+  margin-top: 0.5em;
+  padding-left: 0.5em;
+}
+.Experience .study .studyItem ul li {
+  line-height: 1.8em;
+}
+.Experience .study .studyItem ul li::before {
+  content: " - ";
+}
+.Experience .education .educationItem {
+  margin: 0.5em 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.Experience .education .educationItem h4 {
+  font-size: 1.125em;
+}
+.Experience .education .educationItem p:before {
+  content: "/";
+  margin-left: 0.5em;
 }
 
 /*# sourceMappingURL=common.css.map */

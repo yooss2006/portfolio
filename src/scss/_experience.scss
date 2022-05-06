@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+.Experience {
+  h3 {
+    padding-bottom: 1em;
+    font-size: 1.25em;
+    text-align: center;
+    border-bottom: 2px double $black;
+  }
+  section {
+    padding: 0 5em;
+    margin-bottom: 3em;
+  }
+  .study {
+    .studyItem {
+      margin-top: 2em;
+
+      h4 {
+        font-size: 1.125em;
+        color: nth($blue, 3);
+        margin-bottom: 0.5em;
+      }
+      p {
+        padding: 0.5em 0.5em;
+        border-radius: 10px;
+        background-color: $black;
+        color: $white;
+        word-break: keep-all;
+      }
+      ul {
+        margin-top: 0.5em;
+        padding-left: 0.5em;
+        li {
+          line-height: 1.8em;
+          &::before {
+            content: " - ";
+          }
+        }
+      }
+    }
+  }
+  .education {
+    .educationItem {
+      margin: 0.5em 0;
+      @include flex($a: center, $j: flex-start);
+      h4 {
+        font-size: 1.125em;
+      }
+      p:before {
+        content: "/";
+        margin-left: 0.5em;
+      }
+    }
+  }
+}
