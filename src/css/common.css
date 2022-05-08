@@ -133,7 +133,8 @@ q:after {
 
 body {
   font-family: "HallymGothic-Regular";
-  color: #010326;
+  color: #0f1d2b;
+  background-color: #f5f6ee;
 }
 
 h1,
@@ -156,17 +157,9 @@ h4 {
   text-align: center;
 }
 
-.App {
-  background-color: #f2f2f2;
-}
-
 .header {
   width: 100%;
-  height: 5em;
-  padding: 0 3em;
-  background-color: #f2f2f2;
-  border-bottom: 2px double #010326;
-  box-sizing: border-box;
+  padding: 0.2em 6em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -174,13 +167,22 @@ h4 {
   position: fixed;
   top: 0;
   left: 0;
+  box-sizing: border-box;
   z-index: 20;
+  border-bottom: 2px double #0f1d2b;
+  background-color: #f5f6ee;
+}
+.header h1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 .header h1 img {
   height: 4em;
 }
 .header nav {
-  flex-basis: 40%;
+  flex-basis: 45%;
   min-width: 18.75em;
 }
 .header ul {
@@ -189,31 +191,26 @@ h4 {
   align-items: center;
   flex-wrap: nowrap;
   font-size: 1.5em;
-  color: #010326;
   font-family: "yleeMortalHeartImmortalMemory";
 }
 .header ul li:hover {
-  color: #0528f2;
+  color: #ffb000;
 }
 
 main {
-  height: 90vh;
-  padding: 0 0.5em 0;
-  box-sizing: border-box;
+  min-height: 95vh;
 }
 
 footer {
-  width: 100%;
-  height: 10vh;
+  height: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  background: #010326;
-  color: #f2f2f2;
-  font-family: "yleeMortalHeartImmortalMemory";
   font-size: 1.2em;
-  text-align: center;
+  font-family: "yleeMortalHeartImmortalMemory";
+  color: #f5f6ee;
+  background: #0f1d2b;
 }
 
 .Card {
@@ -252,7 +249,7 @@ footer {
 }
 .Card .businessCard .front {
   backface-visibility: hidden;
-  background: url("../assets/증명사진.jpg") #f2f2f2 no-repeat right 1em center/10em;
+  background: url("../assets/증명사진.jpg") #f5f6ee no-repeat right 1em center/10em;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
@@ -301,10 +298,10 @@ footer {
 .Card .businessCard .address li svg {
   width: 1.2em;
   height: 1.2em;
-  color: #010326;
+  color: #0f1d2b;
 }
 .Card .back {
-  background: url("../assets/증명사진2.png") #f2f2f2 no-repeat right 1em center/10em;
+  background: url("../assets/증명사진2.png") #f5f6ee no-repeat right 1em center/10em;
   transform: rotateY(180deg);
   backface-visibility: hidden;
 }
@@ -315,25 +312,23 @@ footer {
   flex-wrap: nowrap;
   height: 100%;
   flex-direction: column;
-  color: #010326;
+  color: #0f1d2b;
 }
 
 .Introduce {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: stretch;
   flex-wrap: nowrap;
 }
 .Introduce .imgWrapper {
-  flex-basis: 40%;
-  margin: 0 1em;
-  border: 2px double #010326;
-  box-sizing: border-box;
+  width: 30%;
+  min-height: 80vh;
+  border: 2px double #0f1d2b;
   background: url("../assets/사진.jpg") no-repeat center center/cover;
 }
 .Introduce .descWrapper {
-  flex-basis: 40%;
-  margin: 0 1em;
+  width: 50%;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
@@ -342,57 +337,56 @@ footer {
 }
 .Introduce .descWrapper blockquote {
   padding: 1em;
-  border: 2px double #010326;
+  border: 2px double #0f1d2b;
   box-sizing: border-box;
-  flex-basis: 30%;
   background: url("../assets/grass.png") no-repeat right 10% top 20%/50px;
 }
 .Introduce .descWrapper blockquote p {
-  font-size: 1em;
+  font-size: 0.9em;
   line-height: 1.7;
 }
 .Introduce .descWrapper blockquote cite {
   margin-top: 1em;
-  font-size: 1em;
+  font-size: 0.9em;
   display: block;
-  font-family: "yleeMortalHeartImmortalMemory";
   text-align: right;
+  font-family: "yleeMortalHeartImmortalMemory";
 }
 .Introduce .descWrapper blockquote cite::after, .Introduce .descWrapper blockquote cite::before {
   content: " - ";
 }
 .Introduce .descWrapper .descTitle {
-  flex-basis: 60%;
+  flex-grow: 1;
+  margin-top: 1em;
   padding: 1em;
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: stretch;
   flex-wrap: nowrap;
   flex-direction: column;
-  text-align: left;
   box-sizing: border-box;
-  border: 2px double #010326;
+  border: 2px double #0f1d2b;
 }
 .Introduce .descWrapper .descTitle h3 {
   font-size: 1.25em;
-  margin-bottom: 1em;
+  margin-bottom: 0.4em;
 }
 .Introduce .descWrapper .descTitle h3::after, .Introduce .descWrapper .descTitle h3:before {
   content: '"';
 }
 .Introduce .descWrapper .descTitle p {
   margin: 0.2em 0;
-  line-height: 1.5;
+  line-height: 1.35;
 }
 
 .Skill {
-  border-left: 2px double #010326;
-  border-right: 2px double #010326;
+  border-left: 2px double #0f1d2b;
+  border-right: 2px double #0f1d2b;
 }
 .Skill .skillBoard {
   width: 90%;
   margin: 1em auto 0;
-  border: 2px double #010326;
+  border: 2px double #0f1d2b;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
@@ -416,7 +410,7 @@ footer {
 }
 .Skill .skillDesc p {
   margin: 0.5em 0;
-  color: #f2f2f2;
+  color: #f5f6ee;
 }
 .Skill .skillDesc p::before {
   content: " - ";
@@ -425,7 +419,7 @@ footer {
   content: "";
   width: 3.125em;
   height: 0.625em;
-  background-color: #f2f2f2;
+  background-color: #f5f6ee;
   position: absolute;
   right: 30%;
   bottom: 0;
@@ -445,7 +439,7 @@ footer {
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
-  border: 4px double #010326;
+  border: 4px double #0f1d2b;
   overflow: hidden;
 }
 .Project .projectWrapper .projectSlide {
@@ -514,7 +508,7 @@ footer {
   text-align: center;
   box-sizing: border-box;
   border-radius: 10px;
-  color: #0528f2;
+  color: #17456b;
   background-color: gainsboro;
 }
 .Project .projectWrapper .projectSlide .projectItem .skillStack {
@@ -572,7 +566,7 @@ footer {
   padding-bottom: 1em;
   font-size: 1.25em;
   text-align: center;
-  border-bottom: 2px double #010326;
+  border-bottom: 2px double #0f1d2b;
 }
 .Experience section {
   padding: 0 5em;
@@ -583,14 +577,14 @@ footer {
 }
 .Experience .study .studyItem h4 {
   font-size: 1.125em;
-  color: #0528f2;
+  color: #17456b;
   margin-bottom: 0.5em;
 }
 .Experience .study .studyItem p {
   padding: 0.5em 0.5em;
   border-radius: 10px;
-  background-color: #010326;
-  color: #f2f2f2;
+  background-color: #0f1d2b;
+  color: #f5f6ee;
   word-break: keep-all;
 }
 .Experience .study .studyItem ul {

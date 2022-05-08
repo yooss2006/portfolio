@@ -1,5 +1,5 @@
 import "./css/common.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Card from "./components/Card";
 import Introduce from "./components/Introduce";
@@ -35,9 +35,17 @@ function App() {
     }
   };
 
+  const introduceRef = useRef(null);
+  const skillRef = useRef(null);
+  const projectRef = useRef(null);
+  const experienceRef = useRef(null);
+  const pageMove = (route) => {
+    navigate(route);
+  };
+
   return (
     <div className="App">
-      <Card scrollProgress={scrollProgress} />
+      {/* <Card scrollProgress={scrollProgress} /> */}
       <header className="header">
         <h1>
           <img src={logo} alt="유순상의 포트폴리오" />
@@ -45,16 +53,16 @@ function App() {
         <nav>
           <ul>
             <li>
-              <button onClick={() => navigate("/")}>Introduce</button>
+              <button onClick={() => pageMove("/")}>Introduce</button>
             </li>
             <li>
-              <button onClick={() => navigate("/skill")}>Skill</button>
+              <button onClick={() => pageMove("/skill")}>Skill</button>
             </li>
             <li>
-              <button onClick={() => navigate("/project")}>Project</button>
+              <button onClick={() => pageMove("/project")}>Project</button>
             </li>
             <li>
-              <button onClick={() => navigate("/experience")}>
+              <button onClick={() => pageMove("/experience")}>
                 Experience
               </button>
             </li>
@@ -66,7 +74,10 @@ function App() {
           <Route path="/" exact={true} element={<Introduce />} />
           <Route path="/skill" element={<Skill />} />
           <Route path="/project" element={<Project />} />
-          <Route path="/experience" element={<Experience />} />
+          <Route
+            path="/experience"
+            element={<Experience experienceRef={experienceRef} />}
+          />
         </Routes>
       </main>
       <footer>

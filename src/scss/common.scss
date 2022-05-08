@@ -30,9 +30,10 @@ $title: "MaplestoryOTFBold";
 $fontMemories: "yleeMortalHeartImmortalMemory";
 $fontHallym: "HallymGothic-Regular";
 
-$blue: #0554f2, #0540f2, #0528f2;
-$white: #f2f2f2;
-$black: #010326;
+$blue: #419fb7, #17456b;
+$yellow: #ffb000;
+$white: #f5f6ee;
+$black: #0f1d2b;
 
 //html 요소의 범위 표시
 @mixin line {
@@ -53,7 +54,8 @@ $black: #010326;
 
 body {
   font-family: $fontHallym;
-  color: #010326;
+  color: $black;
+  background-color: $white;
 }
 
 h1,

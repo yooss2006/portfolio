@@ -88,8 +88,8 @@ const Project = () => {
                       <dt>기술 스택</dt>
                       <dd>
                         <ul className="skillStack">
-                          {item.skill.map((item) => {
-                            return <li key="item">{item}</li>;
+                          {item.skill.map((item, index) => {
+                            return <li key={index}>{item}</li>;
                           })}
                         </ul>
                       </dd>
