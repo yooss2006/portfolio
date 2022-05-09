@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-import { projectMap as map, projectList } from "../util/project";
-import arrow from "../assets/arrow.png";
 import styled from "styled-components";
+
+import { projectMap as map, projectList } from "../util/project";
+
+import arrow from "../assets/arrow.png";
+import { AiFillGithub } from "react-icons/ai";
+import { MdWebAsset } from "react-icons/md";
 
 const ProjectSlide = styled.section`
   height: ${(props) => props.floor * 100}%;
@@ -12,8 +16,8 @@ const ProjectSlide = styled.section`
   );
 `;
 
-const ProjectItem = styled.div`
-  background: url(${(props) => props.img}) no-repeat top center/cover;
+const ProjectBg = styled.div`
+  background-color: ${(props) => props.color};
 `;
 
 const Project = () => {
@@ -77,13 +81,28 @@ const Project = () => {
             {projectList.map((item) => {
               return (
                 <article className="projectItem" key={item.name}>
-                  <h4>{item.name}</h4>
+                  <header>
+                    <h4>{item.name}</h4>
+                    <ul>
+                      <li>
+                        <a href={item.gitLink} target="_blank">
+                          <AiFillGithub />
+                        </a>
+                      </li>
+                      <li>
+                        <a href={item.distributeLink} target="_blank">
+                          <MdWebAsset />
+                        </a>
+                      </li>
+                    </ul>
+                  </header>
+
                   <div className="flexWrapper">
+                    <p className="simpleDesc">{item.simple_desc}</p>
                     <dl className="oneLine">
                       <dt>참여 인원</dt>
                       <dd>{item.participants} 명</dd>
                     </dl>
-                    <p className="simpleDesc">{item.simple_desc}</p>
                     <dl className="oneLine">
                       <dt>기술 스택</dt>
                       <dd>
@@ -105,7 +124,6 @@ const Project = () => {
                       </dd>
                     </dl>
                   </div>
-                  <ProjectItem className="screen" img={item.img}></ProjectItem>
                 </article>
               );
             })}
@@ -148,6 +166,19 @@ const Project = () => {
           <img src={arrow} alt="오른쪽 화살표" />
         </button>
       </div>
+      <p className="notionLink">
+        <a
+          href="https://supreme-balance-5ba.notion.site/49e5cc208e604ac781b0539ee24343ed"
+          target="_blank"
+        >
+          자세한 내용은 여기를 눌러주세요.
+        </a>
+      </p>
+
+      <ProjectBg
+        className="bg"
+        color={projectList[curPoint[0] * 2 + curPoint[1]].color}
+      ></ProjectBg>
     </section>
   );
 };

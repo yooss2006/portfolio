@@ -157,6 +157,16 @@ h4 {
   text-align: center;
 }
 
+html,
+body {
+  height: 100%;
+}
+
+#root,
+.App {
+  height: 100%;
+}
+
 .header {
   width: 100%;
   padding: 0.2em 6em;
@@ -198,11 +208,11 @@ h4 {
 }
 
 main {
-  min-height: 95vh;
+  height: 95%;
 }
 
 footer {
-  height: 5vh;
+  height: 5%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -316,48 +326,24 @@ footer {
 }
 
 .Introduce {
-  display: flex;
-  justify-content: space-around;
-  align-items: stretch;
-  flex-wrap: nowrap;
+  width: 90%;
+  margin: 0 auto;
 }
-.Introduce .imgWrapper {
-  width: 30%;
-  min-height: 80vh;
-  border: 2px double #0f1d2b;
-  background: url("../assets/사진.jpg") no-repeat center center/cover;
-}
-.Introduce .descWrapper {
-  width: 50%;
+.Introduce .introWapper {
+  width: 100%;
+  margin-bottom: 1em;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
   flex-wrap: nowrap;
-  flex-direction: column;
 }
-.Introduce .descWrapper blockquote {
-  padding: 1em;
+.Introduce .introWapper .imgWrapper {
+  width: 30%;
+  margin-right: 1em;
   border: 2px double #0f1d2b;
-  box-sizing: border-box;
-  background: url("../assets/grass.png") no-repeat right 10% top 20%/50px;
+  background: url("../assets/introduce/사진.jpg") no-repeat center center/cover;
 }
-.Introduce .descWrapper blockquote p {
-  font-size: 0.9em;
-  line-height: 1.7;
-}
-.Introduce .descWrapper blockquote cite {
-  margin-top: 1em;
-  font-size: 0.9em;
-  display: block;
-  text-align: right;
-  font-family: "yleeMortalHeartImmortalMemory";
-}
-.Introduce .descWrapper blockquote cite::after, .Introduce .descWrapper blockquote cite::before {
-  content: " - ";
-}
-.Introduce .descWrapper .descTitle {
-  flex-grow: 1;
-  margin-top: 1em;
+.Introduce .introWapper .descTitle {
   padding: 1em;
   display: flex;
   justify-content: center;
@@ -367,40 +353,97 @@ footer {
   box-sizing: border-box;
   border: 2px double #0f1d2b;
 }
-.Introduce .descWrapper .descTitle h3 {
+.Introduce .introWapper .descTitle h3 {
   font-size: 1.25em;
   margin-bottom: 0.4em;
+  color: #ffb000;
 }
-.Introduce .descWrapper .descTitle h3::after, .Introduce .descWrapper .descTitle h3:before {
+.Introduce .introWapper .descTitle h3::after, .Introduce .introWapper .descTitle h3:before {
   content: '"';
 }
-.Introduce .descWrapper .descTitle p {
+.Introduce .introWapper .descTitle p {
   margin: 0.2em 0;
-  line-height: 1.35;
+  line-height: 1.3;
+  word-break: keep-all;
+}
+.Introduce .introWapper .descTitle li {
+  margin-top: 0.5em;
+}
+.Introduce .introWapper .descTitle li p:nth-child(1) {
+  font-family: "MaplestoryOTFBold";
+}
+.Introduce .introWapper .descTitle li p:nth-child(1):before {
+  content: " 💡 ";
+  color: #ffb000;
+}
+.Introduce .wiseWapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+.Introduce .wiseWapper blockquote {
+  width: 70%;
+  padding: 1em;
+  border: 2px double #0f1d2b;
+  box-sizing: border-box;
+  background: url("../assets/introduce/grass.png") no-repeat right 8% top 10%/3.125em;
+}
+.Introduce .wiseWapper blockquote p {
+  font-size: 1em;
+  line-height: 1.5;
+}
+.Introduce .wiseWapper blockquote p strong {
+  position: relative;
+}
+.Introduce .wiseWapper blockquote p strong::before {
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  opacity: 0.5;
+  border-radius: 10px;
+  background-color: #ffb000;
+}
+.Introduce .wiseWapper blockquote cite {
+  margin-top: 0.7em;
+  font-size: 1em;
+  display: block;
+  text-align: right;
+  font-family: "yleeMortalHeartImmortalMemory";
+}
+.Introduce .wiseWapper blockquote cite::after, .Introduce .wiseWapper blockquote cite::before {
+  content: " - ";
+}
+.Introduce .wiseWapper div {
+  width: 25%;
+  border: 2px double #0f1d2b;
+  background: url(../assets/introduce/introImg.png) center center/contain no-repeat;
 }
 
 .Skill {
-  border-left: 2px double #0f1d2b;
-  border-right: 2px double #0f1d2b;
+  width: 90%;
+  margin: 0 auto;
 }
 .Skill .skillBoard {
-  width: 90%;
-  margin: 1em auto 0;
-  border: 2px double #0f1d2b;
-  box-sizing: border-box;
+  margin-top: 1.5em;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
+  box-sizing: border-box;
+  border: 2px double #0f1d2b;
+  border-radius: 10px;
 }
 .Skill .skillBoard button {
-  margin: 0 1em;
+  margin: 1em 0.5em;
 }
 .Skill .skillBoard img {
-  width: 100%;
+  max-height: 8.75em;
 }
 .Skill .skillDesc {
-  width: 90%;
   margin: 1em auto 0;
   padding: 1em;
   position: relative;
@@ -425,22 +468,30 @@ footer {
   bottom: 0;
 }
 
+.Project {
+  position: relative;
+  overflow: hidden;
+}
 .Project .buttonWrapper {
   width: 75%;
   min-height: 25em;
-  margin: 0 auto;
+  margin: 1em auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
   position: relative;
+  z-index: 10;
 }
 .Project .projectWrapper {
-  width: 85%;
-  height: 80%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 92%;
+  min-height: 20em;
+  margin: 0 auto;
+  position: relative;
   border-radius: 10px;
   border: 4px double #0f1d2b;
   overflow: hidden;
+  background-color: #f5f6ee;
 }
 .Project .projectWrapper .projectSlide {
   width: 200%;
@@ -452,7 +503,6 @@ footer {
   justify-content: space-between;
   align-items: stretch;
   flex-wrap: wrap;
-  z-index: 10;
 }
 .Project .projectWrapper .projectSlide .projectItem {
   width: 50%;
@@ -462,10 +512,29 @@ footer {
   box-sizing: border-box;
   font-size: 0.875em;
 }
-.Project .projectWrapper .projectSlide .projectItem h4 {
+.Project .projectWrapper .projectSlide .projectItem header {
+  position: relative;
+}
+.Project .projectWrapper .projectSlide .projectItem header h4 {
   font-size: 1.3em;
   margin-bottom: 1em;
   text-align: center;
+}
+.Project .projectWrapper .projectSlide .projectItem header ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.Project .projectWrapper .projectSlide .projectItem header ul li {
+  margin-right: 1em;
+}
+.Project .projectWrapper .projectSlide .projectItem header ul li svg {
+  width: 2em;
+  height: 2em;
 }
 .Project .projectWrapper .projectSlide .projectItem .flexWrapper {
   display: flex;
@@ -504,12 +573,12 @@ footer {
 .Project .projectWrapper .projectSlide .projectItem .simpleDesc {
   width: 100%;
   padding: 0.6em 0;
-  margin-bottom: 0.4em;
+  margin-bottom: 1.5em;
   text-align: center;
   box-sizing: border-box;
   border-radius: 10px;
-  color: #17456b;
-  background-color: gainsboro;
+  color: #f5f6ee;
+  background-color: #0f1d2b;
 }
 .Project .projectWrapper .projectSlide .projectItem .skillStack {
   display: flex;
@@ -520,20 +589,7 @@ footer {
 .Project .projectWrapper .projectSlide .projectItem .skillStack li {
   margin-right: 5px;
 }
-.Project .projectWrapper .projectSlide .projectItem .screen {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 20;
-  transition: 0.3s all;
-}
-.Project .projectWrapper .projectSlide .projectItem .screen:hover {
-  opacity: 0;
-}
 .Project .projectBtn {
-  padding: 1em;
   position: absolute;
   z-index: 100;
 }
@@ -542,35 +598,54 @@ footer {
   height: 2.5em;
 }
 .Project .projectBtn.top {
-  top: -1em;
+  top: 0;
   left: 50%;
   transform: translateX(-50%) rotate(90deg);
 }
 .Project .projectBtn.bottom {
-  bottom: -1em;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%) rotate(-90deg);
 }
 .Project .projectBtn.left {
   top: 50%;
-  left: 1.3em;
+  left: 0;
   transform: translateY(-50%);
 }
 .Project .projectBtn.right {
   top: 50%;
-  right: 1.3em;
+  right: 0;
   transform: translateY(-50%) rotate(-180deg);
+}
+.Project .notionLink {
+  width: 70%;
+  margin: 0 auto;
+  color: #17456b;
+}
+.Project .bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.5;
+  z-index: -10;
 }
 
 .Experience h3 {
-  padding-bottom: 1em;
+  padding-left: 1em;
+  padding-bottom: 0.5em;
   font-size: 1.25em;
-  text-align: center;
+  text-align: left;
   border-bottom: 2px double #0f1d2b;
 }
 .Experience section {
   padding: 0 5em;
   margin-bottom: 3em;
+}
+.Experience .study h3::before {
+  content: "📚 ";
+  margin-right: 0.2em;
 }
 .Experience .study .studyItem {
   margin-top: 2em;
@@ -596,6 +671,10 @@ footer {
 }
 .Experience .study .studyItem ul li::before {
   content: " - ";
+}
+.Experience .education h3::before {
+  content: "🎓 ";
+  margin-right: 0.2em;
 }
 .Experience .education .educationItem {
   margin: 0.5em 0;

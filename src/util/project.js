@@ -1,6 +1,3 @@
-import 청귤마켓 from "../assets/project/청귤마켓.png";
-import 회상 from "../assets/project/회상.png";
-
 export const projectMap = (number) => {
   number = number % 2 === 0 ? number / 2 : Math.floor(number / 2) + 1;
   const newArray = [];
@@ -23,7 +20,9 @@ export const projectList = [
       "매일 회의하며 코딩 컨벤션을 설정하고 진행 상황을 점검했습니다.",
       "font-size를 계산된 vw로 설정해 화면 크기에 맞춰 요소의 크기도 변하는 스타일을 구축했습니다.",
     ],
-    img: 청귤마켓,
+    color: "#24732f",
+    gitLink: "https://github.com/seungyyy/team-sns-project",
+    distributeLink: "https://chungyul.shop/",
   },
   {
     name: "회상 - 이전의 일기를 한눈에",
@@ -37,20 +36,21 @@ export const projectList = [
       "'react-datepicker'라이브러리를 이용해 캘린더 모드를 구현해 원하는 날짜의 일기를 볼 수 있습니다.",
       "반응형으로 디자인해 모바일과 태블릿에서도 사용이 가능합니다.",
     ],
-    img: 회상,
+    color: "#7f71c8",
+    gitLink: "https://github.com/yooss2006/recoll",
+    distributeLink: "https://yoofh-recoll.web.app/",
   },
   {
-    name: "똥",
-    participants: 2,
-    simple_desc:
-      "자신의 스토어에서 판매ㅇㅁㄴㅇㅁㄴㅁㄴㅇㅁ할 상품을 등록하고 홍보할 수 있는 SNS",
-    skill: ["HTML", "CSS", "JavaScript"],
+    name: "랜딩페이지",
+    participants: 1,
+    simple_desc: "내가 그린 그림을 소개하는 미술관 랜딩 페이지",
+    skill: ["HTML", "CSS"],
     desc: [
-      "자신의 일상을 글과 사진으로 공유하고ㅇㅁㄴㅇㅁㄴㅇㄴㅁ 다른 사용자의 소식을 확인할 수 있습니다.",
-      "home, profile, follower, fㅇㅁㄴㅇㅁㄴㅇollowing nav menu 페이지를 구현했습니다.",
-      "매일 회의를 하며 코딩 컨벤션을 설정ㅇㄴㅁㅇㅁㄴㅇ하고 진행상황을 점검했습니다.",
-      "font-size를 계산된 vw로 설정해ㅁㄴㅇㅁㄴㅇㄴㅁㅇㅇㅁㄴ 화면 크기에 맞춰 요소의 크기도 변하는 스타일을 구축했습니다.",
+      "피그마의 규격에 맞춰 웹페이지를 제작했습니다.",
+      "화면 크기에 따라 유동적으로 변하는 vw 값을 font-size로 했습니다. em 단위를 사용해 화면 크기에 따라 크기가 줄어드는 스타일을 적용했습니다.",
     ],
-    img: 청귤마켓,
+    color: "#cbcbbb",
+    gitLink: "https://github.com/yooss2006/randing-page",
+    distributeLink: "https://yooss2006.github.io/randing-page/index.html",
   },
 ];

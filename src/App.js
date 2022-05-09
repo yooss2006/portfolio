@@ -45,7 +45,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Card scrollProgress={scrollProgress} /> */}
+      <Card scrollProgress={scrollProgress} />
       <header className="header">
         <h1>
           <img src={logo} alt="유순상의 포트폴리오" />

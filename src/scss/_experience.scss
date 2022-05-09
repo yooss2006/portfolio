@@ -2,16 +2,22 @@
 
 .Experience {
   h3 {
-    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-bottom: 0.5em;
     font-size: 1.25em;
-    text-align: center;
+    text-align: left;
     border-bottom: 2px double $black;
   }
+
   section {
     padding: 0 5em;
     margin-bottom: 3em;
   }
   .study {
+    h3::before {
+      content: "📚 ";
+      margin-right: 0.2em;
+    }
     .studyItem {
       margin-top: 2em;
 
@@ -40,6 +46,10 @@
     }
   }
   .education {
+    h3::before {
+      content: "🎓 ";
+      margin-right: 0.2em;
+    }
     .educationItem {
       margin: 0.5em 0;
       @include flex($a: center, $j: flex-start);

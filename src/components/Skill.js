@@ -49,8 +49,8 @@ const Skill = ({ skillRef }) => {
 
       {selectButton() ? (
         <div className="skillDesc">
-          {selectButton().map((item) => (
-            <p>{item}</p>
+          {selectButton().map((item, index) => (
+            <p key={index}>{item}</p>
           ))}
         </div>
       ) : (

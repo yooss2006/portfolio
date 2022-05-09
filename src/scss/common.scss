@@ -37,8 +37,8 @@ $black: #0f1d2b;
 
 //html 요소의 범위 표시
 @mixin line {
-  background-color: floralwhite;
-  outline: 1px solid red;
+  background-color: #17456b;
+  outline: 1px solid #ffb000;
 }
 
 @mixin flex($a: stretch, $j: space-between, $w: nowrap) {

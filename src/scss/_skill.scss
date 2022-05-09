@@ -1,24 +1,23 @@
 @charset "utf-8";
 
 .Skill {
-  border-left: 2px double $black;
-  border-right: 2px double $black;
+  width: 90%;
+  margin: 0 auto;
   .skillBoard {
-    width: 90%;
-    margin: 1em auto 0;
-    border: 2px double $black;
-    box-sizing: border-box;
-    button {
-      margin: 0 1em;
-    }
+    margin-top: 1.5em;
     @include flex($a: center);
+    box-sizing: border-box;
+    border: 2px double $black;
+    border-radius: 10px;
+    button {
+      margin: 1em 0.5em;
+    }
     img {
-      width: 100%;
+      max-height: 8.75em;
     }
   }
 
   .skillDesc {
-    width: 90%;
     margin: 1em auto 0;
     padding: 1em;
     position: relative;
