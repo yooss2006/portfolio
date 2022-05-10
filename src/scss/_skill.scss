@@ -1,8 +1,6 @@
 @charset "utf-8";
 
 .Skill {
-  width: 90%;
-  margin: 0 auto;
   .skillBoard {
     margin-top: 1.5em;
     @include flex($a: center);

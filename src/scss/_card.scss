@@ -62,23 +62,6 @@
         margin: 1em 0.5em 0;
       }
     }
-    .address {
-      @include flex($a: stretch, $j: flex-start);
-      margin: 0 0.5em 0.5em;
-      li {
-        &:nth-child(2) {
-          margin: 0 1em;
-        }
-        a {
-          @include flex($a: center, $j: center);
-        }
-        svg {
-          width: 1.2em;
-          height: 1.2em;
-          color: $black;
-        }
-      }
-    }
   }
   .back {
     background: url("../assets/증명사진2.png") $white no-repeat right 1em

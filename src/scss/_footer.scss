@@ -1,0 +1,22 @@
+@charset "utf-8";
+footer {
+  text-align: center;
+  font-size: 1.2em;
+  font-family: $fontMemories;
+  color: $white;
+  background: $black;
+  padding: 0.8em 0 1em;
+  .address {
+    @include flex($a: center, $j: center);
+    li {
+      &:nth-child(2) {
+        margin: 0 1em;
+      }
+      svg {
+        // width: 1em;
+        // height: 1em;
+        color: $white;
+      }
+    }
+  }
+}

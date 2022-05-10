@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+.header {
+  padding: 0.2em 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  z-index: 20;
+  border-bottom: 2px double $black;
+  background-color: $white;
+  .headerCont {
+    width: 1200px;
+    margin: 0 auto;
+    @include flex($a: center);
+  }
+
+  h1 {
+    @include flex($a: center);
+    img {
+      height: 4em;
+    }
+  }
+  nav {
+    flex-basis: 45%;
+    //300px
+    min-width: 18.75em;
+  }
+  ul {
+    @include flex($a: center);
+    font-size: 1.5em;
+    font-family: $fontMemories;
+    li:hover {
+      color: $yellow;
+    }
+    button {
+      position: relative;
+    }
+    button.on::before {
+      content: "";
+      width: 100%;
+      height: 5px;
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      border-radius: 5px;
+      opacity: 0.5;
+      background-color: $yellow;
+    }
+  }
+}

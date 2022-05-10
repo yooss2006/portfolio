@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { skill } from "../util/skill";
 import styled from "styled-components";
+
+import { skill } from "../util/skill";
 
 const StyledButton = styled.button`
   width: ${(props) => 100 / props.skillLength}%;
 `;
 
-const Skill = ({ skillRef }) => {
+const Skill = () => {
   const [skillTree, isSkillTree] = useState(skill);
 
   const handleCheckBtn = (name) => {
@@ -29,7 +30,7 @@ const Skill = ({ skillRef }) => {
 
   return (
     <section className="Skill container">
-      <h2 ref={skillRef}>기술 스택</h2>
+      <h2>기술 스택</h2>
       <div className="skillBoard">
         {skillTree.map((item) => {
           return (

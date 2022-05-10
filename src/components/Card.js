@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+
 import { BsGithub, BsBookFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
-import styled from "styled-components";
 
 const CardWrapper = styled.section`
   &:after {
@@ -31,19 +32,19 @@ const Card = ({ scrollProgress }) => {
           </header>
           <ul className="address">
             <li>
-              <a href="mailto:yoofh2006@gmail.com">
+              <a href="mailto:yoofh2006@gmail.com" target="_blank">
                 <MdEmail />
                 <span className="blind">이메일</span>
               </a>
             </li>
             <li>
-              <a href="https://github.com/yooss2006">
+              <a href="https://github.com/yooss2006" target="_blank">
                 <BsGithub />
                 <span className="blind">깃허브</span>
               </a>
             </li>
             <li>
-              <a href="https://velog.io/@yooss2006">
+              <a href="https://velog.io/@yooss2006" target="_blank">
                 <BsBookFill />
                 <span className="blind">블로그</span>
               </a>

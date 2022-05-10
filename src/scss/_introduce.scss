@@ -1,10 +1,7 @@
 @charset "utf-8";
 
 .Introduce {
-  width: 90%;
-  margin: 0 auto;
   .introWapper {
-    width: 100%;
     margin-bottom: 1em;
     @include flex;
     .imgWrapper {
@@ -16,8 +13,6 @@
     }
     .descTitle {
       padding: 1em;
-      @include flex($j: center);
-      flex-direction: column;
       box-sizing: border-box;
       border: 2px double $black;
       h3 {
@@ -86,7 +81,8 @@
       }
     }
     div {
-      width: 25%;
+      width: 30%;
+      margin-left: 1em;
       border: 2px double $black;
       background: url(../assets/introduce/introImg.png) center center/contain
         no-repeat;

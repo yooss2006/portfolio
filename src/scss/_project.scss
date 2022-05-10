@@ -116,12 +116,12 @@
       height: 2.5em;
     }
     &.top {
-      top: 0;
+      top: -0.5em;
       left: 50%;
       transform: translateX(-50%) rotate(90deg);
     }
     &.bottom {
-      bottom: 0;
+      bottom: -0.5em;
       left: 50%;
       transform: translateX(-50%) rotate(-90deg);
     }

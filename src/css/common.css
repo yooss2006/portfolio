@@ -144,19 +144,6 @@ h4 {
   font-family: "MaplestoryOTFBold";
 }
 
-.container {
-  height: 100%;
-  padding: 6em 0 1em;
-  box-sizing: border-box;
-  overflow: scroll;
-  position: relative;
-  z-index: 10;
-}
-.container h2 {
-  font-size: 1.25em;
-  text-align: center;
-}
-
 html,
 body {
   height: 100%;
@@ -167,13 +154,55 @@ body {
   height: 100%;
 }
 
-.header {
-  width: 100%;
-  padding: 0.2em 6em;
+main {
+  width: 1200px;
+  height: 94%;
+  margin: 0 auto;
+  border-left: 2px double #0f1d2b;
+  border-right: 2px double #0f1d2b;
+}
+
+.container {
+  height: 100%;
+  padding: 6em 1em 1em;
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+.container::-webkit-scrollbar {
+  display: none;
+}
+.container h2 {
+  font-size: 1.25em;
+  text-align: center;
+}
+
+.address {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  margin: 0 0.5em 0.5em;
+}
+.address li:nth-child(2) {
+  margin: 0 1em;
+}
+.address li a {
+  display: flex;
+  justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
+}
+.address li svg {
+  width: 1.2em;
+  height: 1.2em;
+  color: #0f1d2b;
+}
+
+.header {
+  padding: 0.2em 0;
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -181,6 +210,14 @@ body {
   z-index: 20;
   border-bottom: 2px double #0f1d2b;
   background-color: #f5f6ee;
+}
+.header .headerCont {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 .header h1 {
   display: flex;
@@ -206,21 +243,40 @@ body {
 .header ul li:hover {
   color: #ffb000;
 }
-
-main {
-  height: 95%;
+.header ul button {
+  position: relative;
+}
+.header ul button.on::before {
+  content: "";
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  border-radius: 5px;
+  opacity: 0.5;
+  background-color: #ffb000;
 }
 
 footer {
-  height: 5%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
+  text-align: center;
   font-size: 1.2em;
   font-family: "yleeMortalHeartImmortalMemory";
   color: #f5f6ee;
   background: #0f1d2b;
+  padding: 0.8em 0 1em;
+}
+footer .address {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+footer .address li:nth-child(2) {
+  margin: 0 1em;
+}
+footer .address li svg {
+  color: #f5f6ee;
 }
 
 .Card {
@@ -289,27 +345,6 @@ footer {
   font-size: 1.25em;
   margin: 1em 0.5em 0;
 }
-.Card .businessCard .address {
-  display: flex;
-  justify-content: flex-start;
-  align-items: stretch;
-  flex-wrap: nowrap;
-  margin: 0 0.5em 0.5em;
-}
-.Card .businessCard .address li:nth-child(2) {
-  margin: 0 1em;
-}
-.Card .businessCard .address li a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-.Card .businessCard .address li svg {
-  width: 1.2em;
-  height: 1.2em;
-  color: #0f1d2b;
-}
 .Card .back {
   background: url("../assets/증명사진2.png") #f5f6ee no-repeat right 1em center/10em;
   transform: rotateY(180deg);
@@ -325,12 +360,7 @@ footer {
   color: #0f1d2b;
 }
 
-.Introduce {
-  width: 90%;
-  margin: 0 auto;
-}
 .Introduce .introWapper {
-  width: 100%;
   margin-bottom: 1em;
   display: flex;
   justify-content: space-between;
@@ -345,11 +375,6 @@ footer {
 }
 .Introduce .introWapper .descTitle {
   padding: 1em;
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  flex-wrap: nowrap;
-  flex-direction: column;
   box-sizing: border-box;
   border: 2px double #0f1d2b;
 }
@@ -418,15 +443,12 @@ footer {
   content: " - ";
 }
 .Introduce .wiseWapper div {
-  width: 25%;
+  width: 30%;
+  margin-left: 1em;
   border: 2px double #0f1d2b;
   background: url(../assets/introduce/introImg.png) center center/contain no-repeat;
 }
 
-.Skill {
-  width: 90%;
-  margin: 0 auto;
-}
 .Skill .skillBoard {
   margin-top: 1.5em;
   display: flex;
@@ -598,12 +620,12 @@ footer {
   height: 2.5em;
 }
 .Project .projectBtn.top {
-  top: 0;
+  top: -0.5em;
   left: 50%;
   transform: translateX(-50%) rotate(90deg);
 }
 .Project .projectBtn.bottom {
-  bottom: 0;
+  bottom: -0.5em;
   left: 50%;
   transform: translateX(-50%) rotate(-90deg);
 }

@@ -7,47 +7,45 @@ body {
 .App {
   height: 100%;
 }
-.header {
-  width: 100%;
-  padding: 0.2em 6em;
-  @include flex($a: center);
-  position: fixed;
-  top: 0;
-  left: 0;
-  box-sizing: border-box;
-  z-index: 20;
-  border-bottom: 2px double $black;
-  background-color: $white;
-  h1 {
-    @include flex($a: center);
-    img {
-      height: 4em;
-    }
-  }
-  nav {
-    flex-basis: 45%;
-    //300px
-    min-width: 18.75em;
-  }
-  ul {
-    @include flex($a: center);
-    font-size: 1.5em;
-    font-family: $fontMemories;
-    li:hover {
-      color: $yellow;
-    }
-  }
-}
 
 main {
-  height: 95%;
+  width: 1200px;
+  height: 94%;
+  margin: 0 auto;
+  border-left: 2px double $black;
+  border-right: 2px double $black;
 }
 
-footer {
-  height: 5%;
-  @include flex($a: center, $j: center);
-  font-size: 1.2em;
-  font-family: $fontMemories;
-  color: $white;
-  background: $black;
+.container {
+  height: 100%;
+  padding: 6em 1em 1em;
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  h2 {
+    font-size: 1.25em;
+    text-align: center;
+  }
+}
+
+.address {
+  @include flex($a: stretch, $j: flex-start);
+  margin: 0 0.5em 0.5em;
+  li {
+    &:nth-child(2) {
+      margin: 0 1em;
+    }
+    a {
+      @include flex($a: center, $j: center);
+    }
+    svg {
+      width: 1.2em;
+      height: 1.2em;
+      color: $black;
+    }
+  }
 }
