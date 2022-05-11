@@ -40,3 +40,23 @@
     }
   }
 }
+
+@media screen and (max-width: 800px) {
+  .Skill {
+    .skillBoard {
+      img {
+        max-height: 7em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .Skill {
+    .skillBoard {
+      img {
+        max-height: 5em;
+      }
+    }
+  }
+}

@@ -89,3 +89,39 @@
     }
   }
 }
+
+@media screen and (max-width: 800px) {
+  .Introduce {
+    .introWapper {
+      display: block;
+      .imgWrapper {
+        width: auto;
+        height: 200px;
+        margin-right: 0;
+        box-sizing: border-box;
+        background: url("../assets/introduce/사진.jpg") no-repeat center -100px /
+          cover;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .Introduce {
+    .introWapper {
+      .imgWrapper {
+        background: url("../assets/introduce/사진.jpg") no-repeat center -50px /
+          cover;
+      }
+    }
+    .wiseWapper {
+      display: block;
+      blockquote {
+        width: auto;
+      }
+      div {
+        display: none;
+      }
+    }
+  }
+}

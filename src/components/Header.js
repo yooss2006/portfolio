@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import logo from "../assets/logo.png";
 
 const Header = ({ curPage, handleCurPage, handleLogoClick }) => {
+  const [navMode, setNavMode] = useState(false);
+
   const navigate = useNavigate();
 
   const pageMove = (route) => {
+    if (navMode) {
+      setNavMode(false);
+    }
     handleCurPage(route.slice(1));
     navigate(route);
   };
@@ -19,7 +24,15 @@ const Header = ({ curPage, handleCurPage, handleLogoClick }) => {
             <img src={logo} alt="유순상의 포트폴리오" />
           </button>
         </h1>
-        <nav>
+        <button className="menuCont" onClick={() => setNavMode(true)}>
+          <span className="blind">메뉴 버튼</span>
+          <div className="menu">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </button>
+        <nav className={navMode ? "navMode" : ""}>
           <ul>
             <li>
               <button
@@ -54,6 +67,9 @@ const Header = ({ curPage, handleCurPage, handleLogoClick }) => {
               </button>
             </li>
           </ul>
+          <button className="close" onClick={() => setNavMode(false)}>
+            x
+          </button>
         </nav>
       </div>
     </header>

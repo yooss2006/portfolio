@@ -1,11 +1,13 @@
 @charset "utf-8";
 footer {
+  padding: 0.8em 0 1em;
+  position: relative;
+  z-index: 10;
   text-align: center;
   font-size: 1.2em;
   font-family: $fontMemories;
   color: $white;
   background: $black;
-  padding: 0.8em 0 1em;
   .address {
     @include flex($a: center, $j: center);
     li {

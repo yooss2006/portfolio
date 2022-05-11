@@ -9,7 +9,7 @@ body {
 }
 
 main {
-  width: 1200px;
+  max-width: 1200px;
   height: 94%;
   margin: 0 auto;
   border-left: 2px double $black;
@@ -47,5 +47,23 @@ main {
       height: 1.2em;
       color: $black;
     }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .App {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .App {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .App {
+    font-size: 9px;
   }
 }

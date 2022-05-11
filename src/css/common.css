@@ -127,7 +127,7 @@ q:after {
   font-weight: 400;
   font-style: normal;
 }
-.hide {
+.hide, .header .menuCont {
   display: none;
 }
 
@@ -155,7 +155,7 @@ body {
 }
 
 main {
-  width: 1200px;
+  max-width: 1200px;
   height: 94%;
   margin: 0 auto;
   border-left: 2px double #0f1d2b;
@@ -200,6 +200,21 @@ main {
   color: #0f1d2b;
 }
 
+@media screen and (max-width: 1200px) {
+  .App {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .App {
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .App {
+    font-size: 9px;
+  }
+}
 .header {
   padding: 0.2em 0;
   width: 100%;
@@ -212,7 +227,7 @@ main {
   background-color: #f5f6ee;
 }
 .header .headerCont {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -220,6 +235,7 @@ main {
   flex-wrap: nowrap;
 }
 .header h1 {
+  margin-left: 1em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -228,11 +244,63 @@ main {
 .header h1 img {
   height: 4em;
 }
-.header nav {
-  flex-basis: 45%;
-  min-width: 18.75em;
+.header .menuCont {
+  position: relative;
 }
-.header ul {
+.header .menuCont .menu {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 1s all;
+}
+.header .menuCont .menu div {
+  position: absolute;
+  width: 20px;
+  height: 3.5px;
+  background-color: #0f1d2b;
+  border-radius: 10px;
+  transition: 1s all;
+}
+.header .menuCont .menu div:nth-child(1) {
+  transform: rotate(58deg);
+  top: 9px;
+  left: 4.5px;
+}
+.header .menuCont .menu div:nth-child(2) {
+  transform: rotate(-58deg);
+  top: 9px;
+  left: -4.5px;
+}
+.header .menuCont .menu div:nth-child(3) {
+  width: 22px;
+  bottom: 0px;
+  left: -1px;
+}
+.header .menuCont .menu:hover div {
+  background-color: #ffb000;
+}
+.header .menuCont .menu:hover div:nth-child(1) {
+  transform: rotate(0);
+  top: 0;
+  left: 0;
+}
+.header .menuCont .menu:hover div:nth-child(2) {
+  transform: rotate(0) translateY(-50%);
+  top: 50%;
+  left: 0;
+}
+.header .menuCont .menu:hover div:nth-child(3) {
+  width: 20px;
+  bottom: 0;
+  left: 0;
+}
+.header nav {
+  margin-right: 1em;
+}
+.header nav ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -240,13 +308,16 @@ main {
   font-size: 1.5em;
   font-family: "yleeMortalHeartImmortalMemory";
 }
-.header ul li:hover {
+.header nav ul li {
+  margin-left: 6.94vw;
+}
+.header nav ul li:hover {
   color: #ffb000;
 }
-.header ul button {
+.header nav ul button {
   position: relative;
 }
-.header ul button.on::before {
+.header nav ul button.on::before {
   content: "";
   width: 100%;
   height: 5px;
@@ -257,14 +328,72 @@ main {
   opacity: 0.5;
   background-color: #ffb000;
 }
+.header nav .close {
+  display: none;
+}
 
+@media screen and (max-width: 1200px) {
+  .header .headerCont {
+    max-width: 1000px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .header .headerCont {
+    max-width: 600px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .header .headerCont {
+    max-width: 350px;
+  }
+  .header .menuCont {
+    right: 25px;
+    display: block;
+  }
+  .header nav {
+    position: fixed;
+    top: 0;
+    right: -150px;
+    width: 30%;
+    height: 100%;
+    background-color: #f5f6ee;
+    transition: 0.5s all;
+  }
+  .header nav ul {
+    display: block;
+    margin-top: 30px;
+  }
+  .header nav ul li {
+    margin: 10px 10px;
+  }
+  .header nav ul li::before {
+    content: " - ";
+  }
+  .header nav ul button.on::before {
+    bottom: 3px;
+  }
+  .header nav .close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: block;
+    z-index: 10;
+  }
+  .header nav.navMode {
+    right: -10px;
+  }
+}
 footer {
+  padding: 0.8em 0 1em;
+  position: relative;
+  z-index: 10;
   text-align: center;
   font-size: 1.2em;
   font-family: "yleeMortalHeartImmortalMemory";
   color: #f5f6ee;
   background: #0f1d2b;
-  padding: 0.8em 0 1em;
 }
 footer .address {
   display: flex;
@@ -298,6 +427,7 @@ footer .address li svg {
 }
 .Card .businessCard {
   width: 50%;
+  max-width: 800px;
   min-height: 15em;
   position: absolute;
   top: 50%;
@@ -360,6 +490,36 @@ footer .address li svg {
   color: #0f1d2b;
 }
 
+@media screen and (max-width: 800px) {
+  .Card .businessCard {
+    width: 60%;
+  }
+  .Card .businessCard .commonCard {
+    box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.63);
+  }
+  .Card .businessCard header {
+    margin-top: 3.5em;
+  }
+  .Card .businessCard header h3 {
+    font-size: 1.2em;
+  }
+  .Card .businessCard header h3::before {
+    width: 2.5em;
+    height: 2em;
+    top: 2.9em;
+  }
+  .Card .businessCard header p {
+    font-size: 1.1em;
+  }
+  .Card .back {
+    font-size: 0.9em;
+  }
+}
+@media screen and (max-width: 500px) {
+  .Card .businessCard {
+    width: 80%;
+  }
+}
 .Introduce .introWapper {
   margin-bottom: 1em;
   display: flex;
@@ -449,6 +609,32 @@ footer .address li svg {
   background: url(../assets/introduce/introImg.png) center center/contain no-repeat;
 }
 
+@media screen and (max-width: 800px) {
+  .Introduce .introWapper {
+    display: block;
+  }
+  .Introduce .introWapper .imgWrapper {
+    width: auto;
+    height: 200px;
+    margin-right: 0;
+    box-sizing: border-box;
+    background: url("../assets/introduce/사진.jpg") no-repeat center -100px/cover;
+  }
+}
+@media screen and (max-width: 510px) {
+  .Introduce .introWapper .imgWrapper {
+    background: url("../assets/introduce/사진.jpg") no-repeat center -50px/cover;
+  }
+  .Introduce .wiseWapper {
+    display: block;
+  }
+  .Introduce .wiseWapper blockquote {
+    width: auto;
+  }
+  .Introduce .wiseWapper div {
+    display: none;
+  }
+}
 .Skill .skillBoard {
   margin-top: 1.5em;
   display: flex;
@@ -490,9 +676,18 @@ footer .address li svg {
   bottom: 0;
 }
 
+@media screen and (max-width: 800px) {
+  .Skill .skillBoard img {
+    max-height: 7em;
+  }
+}
+@media screen and (max-width: 500px) {
+  .Skill .skillBoard img {
+    max-height: 5em;
+  }
+}
 .Project {
   position: relative;
-  overflow: hidden;
 }
 .Project .buttonWrapper {
   width: 75%;
@@ -529,8 +724,9 @@ footer .address li svg {
 .Project .projectWrapper .projectSlide .projectItem {
   width: 50%;
   height: 50%;
-  position: relative;
   padding: 1em;
+  position: relative;
+  overflow: scroll;
   box-sizing: border-box;
   font-size: 0.875em;
 }
@@ -588,6 +784,7 @@ footer .address li svg {
 }
 .Project .projectWrapper .projectSlide .projectItem .multiLine li {
   line-height: 1.6;
+  word-break: keep-all;
 }
 .Project .projectWrapper .projectSlide .projectItem .multiLine li::before {
   content: " - ";
@@ -647,13 +844,58 @@ footer .address li svg {
 .Project .bg {
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   opacity: 0.5;
   z-index: -10;
 }
 
+@media screen and (max-width: 800px) {
+  .Project .buttonWrapper {
+    width: 90%;
+    min-height: 23em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: relative;
+    z-index: 10;
+  }
+  .Project .projectWrapper {
+    width: 90%;
+  }
+  .Project .projectBtn img {
+    width: 1em;
+    height: 2em;
+  }
+  .Project .projectBtn.top {
+    top: -1em;
+  }
+  .Project .projectBtn.bottom {
+    bottom: -1em;
+  }
+  .Project .notionLink {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .Project .buttonWrapper {
+    width: 90%;
+  }
+  .Project .notionLink {
+    width: 80%;
+    margin: 10px auto 0;
+  }
+}
+@media screen and (max-width: 400px) {
+  .Project .buttonWrapper {
+    width: 100%;
+  }
+  .Project .notionLink {
+    width: 90%;
+  }
+}
 .Experience h3 {
   padding-left: 1em;
   padding-bottom: 0.5em;

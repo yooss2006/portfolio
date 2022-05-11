@@ -18,6 +18,7 @@
   }
   .businessCard {
     width: 50%;
+    max-width: 800px;
     min-height: 15em;
     position: absolute;
     top: 50%;
@@ -73,6 +74,42 @@
       height: 100%;
       flex-direction: column;
       color: $black;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .Card {
+    .businessCard {
+      width: 60%;
+      .commonCard {
+        box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.63);
+      }
+      header {
+        margin-top: 3.5em;
+        h3 {
+          font-size: 1.2em;
+          &::before {
+            width: 2.5em;
+            height: 2em;
+            top: 2.9em;
+          }
+        }
+        p {
+          font-size: 1.1em;
+        }
+      }
+    }
+    .back {
+      font-size: 0.9em;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .Card {
+    .businessCard {
+      width: 80%;
     }
   }
 }
