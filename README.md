@@ -8,7 +8,7 @@
 
 ## 배포링크
 
-[배포링크]("https://yooss-portfolio.web.app/)
+[배포링크](https://yooss-portfolio.web.app/)
 
 ## 기술 스택
 
