@@ -56,7 +56,7 @@ const Card = ({ scrollProgress }) => {
             <li>1. 더 좋은 코드를 짜기 위해 노력합니다.</li>
             <li>2. 접근성을 고려해 개발합니다. </li>
             <li>3. 공부한 내용은 꼼꼼히 정리합니다. </li>
-            <li>4. 매일 성실하게 공부합니다.</li>
+            <li>4. 포토샵을 잘 다룹니다..</li>
           </ol>
         </article>
       </BusinessCardWrapper>

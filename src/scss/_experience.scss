@@ -63,3 +63,18 @@
     }
   }
 }
+@media screen and (max-width: 500px) {
+  .Experience {
+    @include flex($a: center, $j: center);
+    flex-direction: column;
+    h3 {
+      font-size: 1.5em;
+    }
+    .study {
+      width: 100%;
+    }
+    .education {
+      width: 100%;
+    }
+  }
+}

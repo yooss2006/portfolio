@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
 import { projectMap as map, projectList } from "../util/project";
@@ -23,6 +23,11 @@ const ProjectBg = styled.div`
 const Project = () => {
   const [projectMap, setProjectMap] = useState(map(projectList.length));
   const [curPoint, setCurPoint] = useState([0, 0]);
+  const project = useRef(null);
+
+  useEffect(() => {
+    if (project.current !== null) project.current.focus();
+  }, [curPoint]);
 
   const arrowCheck = () => {
     let curArrawMap = [0, 0, 0, 0];
@@ -49,7 +54,7 @@ const Project = () => {
     return curArrawMap;
   };
 
-  const handleMove = (location) => {
+  const handleClickMove = (location) => {
     switch (location) {
       case "상":
         setCurPoint([curPoint[0] - 1, curPoint[1]]);
@@ -66,9 +71,29 @@ const Project = () => {
     }
   };
 
+  function handleKeyboardPress(e) {
+    const location = arrowCheck();
+    if ((e.keycode === 38 || e.key === "ArrowUp") && location[0]) {
+      //상
+      setCurPoint([curPoint[0] - 1, curPoint[1]]);
+    } else if ((e.keycode === 40 || e.key === "ArrowDown") && location[1]) {
+      //하
+      setCurPoint([curPoint[0] + 1, curPoint[1]]);
+    } else if ((e.keycode === 37 || e.key === "ArrowLeft") && location[2]) {
+      //좌
+      setCurPoint([curPoint[0], curPoint[1] - 1]);
+    } else if ((e.keycode === 39 || e.key === "ArrowRight") && location[3]) {
+      //우
+      setCurPoint([curPoint[0], curPoint[1] + 1]);
+    }
+  }
+
   return (
     <section className="Project container">
       <h2>프로젝트</h2>
+      <p className="explanation">
+        아래 프로젝트를 클릭 후 키보드의 화살표로 움직여보세요.
+      </p>
       <div className="buttonWrapper">
         <div className="projectWrapper">
           <ProjectSlide
@@ -76,8 +101,12 @@ const Project = () => {
             xLocation={curPoint[1]}
             yLocation={curPoint[0]}
             floor={projectMap.length}
+            onKeyUp={handleKeyboardPress}
+            ref={project}
+            tabIndex={0}
           >
             <h3 className="blind">프로젝트 슬라이드</h3>
+
             {projectList.map((item) => {
               return (
                 <article className="projectItem" key={item.name}>
@@ -133,7 +162,7 @@ const Project = () => {
           className={["projectBtn", "top", arrowCheck()[0] ? "" : "hide"].join(
             " "
           )}
-          onClick={() => handleMove("상")}
+          onClick={() => handleClickMove("상")}
         >
           <img src={arrow} alt="위쪽 화살표" />
         </button>
@@ -143,7 +172,7 @@ const Project = () => {
             "bottom",
             arrowCheck()[1] ? "" : "hide",
           ].join(" ")}
-          onClick={() => handleMove("하")}
+          onClick={() => handleClickMove("하")}
         >
           <img src={arrow} alt="아래쪽 화살표" />
         </button>
@@ -151,7 +180,7 @@ const Project = () => {
           className={["projectBtn", "left", arrowCheck()[2] ? "" : "hide"].join(
             " "
           )}
-          onClick={() => handleMove("좌")}
+          onClick={() => handleClickMove("좌")}
         >
           <img src={arrow} alt="왼쪽 화살표" />
         </button>
@@ -161,7 +190,7 @@ const Project = () => {
             "right",
             arrowCheck()[3] ? "" : "hide",
           ].join(" ")}
-          onClick={() => handleMove("우")}
+          onClick={() => handleClickMove("우")}
         >
           <img src={arrow} alt="오른쪽 화살표" />
         </button>

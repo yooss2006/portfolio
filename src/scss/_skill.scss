@@ -53,10 +53,19 @@
 
 @media screen and (max-width: 500px) {
   .Skill {
+    @include flex($a: center, $j: center);
+    flex-direction: column;
+    h2 {
+      font-size: 2em;
+    }
     .skillBoard {
+      width: 100%;
       img {
         max-height: 5em;
       }
+    }
+    .skillDesc {
+      width: 100%;
     }
   }
 }

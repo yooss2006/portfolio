@@ -151,12 +151,12 @@ body {
 
 #root,
 .App {
-  height: 100%;
+  height: 100vh;
 }
 
 main {
   max-width: 1200px;
-  height: 94%;
+  height: 100%;
   margin: 0 auto;
   border-left: 2px double #0f1d2b;
   border-right: 2px double #0f1d2b;
@@ -210,9 +210,17 @@ main {
     font-size: 11px;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .App {
     font-size: 9px;
+  }
+
+  main {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    border-left: 2px double #0f1d2b;
+    border-right: 2px double #0f1d2b;
   }
 }
 .header {
@@ -279,24 +287,6 @@ main {
   bottom: 0px;
   left: -1px;
 }
-.header .menuCont .menu:hover div {
-  background-color: #ffb000;
-}
-.header .menuCont .menu:hover div:nth-child(1) {
-  transform: rotate(0);
-  top: 0;
-  left: 0;
-}
-.header .menuCont .menu:hover div:nth-child(2) {
-  transform: rotate(0) translateY(-50%);
-  top: 50%;
-  left: 0;
-}
-.header .menuCont .menu:hover div:nth-child(3) {
-  width: 20px;
-  bottom: 0;
-  left: 0;
-}
 .header nav {
   margin-right: 1em;
 }
@@ -342,19 +332,37 @@ main {
     max-width: 600px;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .header .headerCont {
-    max-width: 350px;
+    max-width: 400px;
   }
   .header .menuCont {
     right: 25px;
     display: block;
   }
+  .header .menuCont .menu.navModeBtnOn div {
+    background-color: #ffb000;
+  }
+  .header .menuCont .menu.navModeBtnOn div:nth-child(1) {
+    transform: rotate(0);
+    top: 0;
+    left: 0;
+  }
+  .header .menuCont .menu.navModeBtnOn div:nth-child(2) {
+    transform: rotate(0) translateY(-50%);
+    top: 50%;
+    left: 0;
+  }
+  .header .menuCont .menu.navModeBtnOn div:nth-child(3) {
+    width: 20px;
+    bottom: 0;
+    left: 0;
+  }
   .header nav {
     position: fixed;
-    top: 0;
-    right: -150px;
-    width: 30%;
+    top: 40.5px;
+    right: -250px;
+    width: 40%;
     height: 100%;
     background-color: #f5f6ee;
     transition: 0.5s all;
@@ -364,7 +372,8 @@ main {
     margin-top: 30px;
   }
   .header nav ul li {
-    margin: 10px 10px;
+    margin: 20px 10px;
+    font-size: 1.3em;
   }
   .header nav ul li::before {
     content: " - ";
@@ -372,17 +381,8 @@ main {
   .header nav ul button.on::before {
     bottom: 3px;
   }
-  .header nav .close {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    display: block;
-    z-index: 10;
-  }
   .header nav.navMode {
-    right: -10px;
+    right: -12px;
   }
 }
 footer {
@@ -413,7 +413,7 @@ footer .address li svg {
   position: relative;
   font-size: 1.25em;
   font-family: "yleeMortalHeartImmortalMemory";
-  z-index: 10;
+  z-index: 20;
 }
 .Card::after {
   content: "";
@@ -548,11 +548,11 @@ footer .address li svg {
 }
 .Introduce .introWapper .descTitle p {
   margin: 0.2em 0;
-  line-height: 1.3;
+  line-height: 1.5;
   word-break: keep-all;
 }
 .Introduce .introWapper .descTitle li {
-  margin-top: 0.5em;
+  margin-top: 1em;
 }
 .Introduce .introWapper .descTitle li p:nth-child(1) {
   font-family: "MaplestoryOTFBold";
@@ -622,10 +622,18 @@ footer .address li svg {
   }
 }
 @media screen and (max-width: 510px) {
+  .Introduce {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
   .Introduce .introWapper .imgWrapper {
     background: url("../assets/introduce/사진.jpg") no-repeat center -50px/cover;
   }
   .Introduce .wiseWapper {
+    width: 100%;
     display: block;
   }
   .Introduce .wiseWapper blockquote {
@@ -682,12 +690,34 @@ footer .address li svg {
   }
 }
 @media screen and (max-width: 500px) {
+  .Skill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  .Skill h2 {
+    font-size: 2em;
+  }
+  .Skill .skillBoard {
+    width: 100%;
+  }
   .Skill .skillBoard img {
     max-height: 5em;
+  }
+  .Skill .skillDesc {
+    width: 100%;
   }
 }
 .Project {
   position: relative;
+}
+.Project .explanation {
+  margin: 0.71em 0 1.07em;
+  font-size: 0.875em;
+  text-align: center;
+  color: #17456b;
 }
 .Project .buttonWrapper {
   width: 75%;
@@ -726,7 +756,7 @@ footer .address li svg {
   height: 50%;
   padding: 1em;
   position: relative;
-  overflow: scroll;
+  overflow-y: scroll;
   box-sizing: border-box;
   font-size: 0.875em;
 }
@@ -888,9 +918,31 @@ footer .address li svg {
     margin: 10px auto 0;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
+  .Project {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  .Project h2 {
+    font-size: 2em;
+  }
   .Project .buttonWrapper {
     width: 100%;
+    min-height: 28em;
+  }
+  .Project .projectWrapper {
+    min-height: 24em;
+  }
+  .Project .projectWrapper header {
+    position: relative;
+  }
+  .Project .projectWrapper header h4 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    text-align: center;
   }
   .Project .notionLink {
     width: 90%;
@@ -953,6 +1005,25 @@ footer .address li svg {
 .Experience .education .educationItem p:before {
   content: "/";
   margin-left: 0.5em;
+}
+
+@media screen and (max-width: 500px) {
+  .Experience {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  .Experience h3 {
+    font-size: 1.5em;
+  }
+  .Experience .study {
+    width: 100%;
+  }
+  .Experience .education {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=common.css.map */

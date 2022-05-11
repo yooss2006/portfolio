@@ -24,9 +24,9 @@ const Header = ({ curPage, handleCurPage, handleLogoClick }) => {
             <img src={logo} alt="유순상의 포트폴리오" />
           </button>
         </h1>
-        <button className="menuCont" onClick={() => setNavMode(true)}>
+        <button className="menuCont" onClick={() => setNavMode(!navMode)}>
           <span className="blind">메뉴 버튼</span>
-          <div className="menu">
+          <div className={["menu", navMode ? "navModeBtnOn" : ""].join(" ")}>
             <div></div>
             <div></div>
             <div></div>
@@ -67,9 +67,6 @@ const Header = ({ curPage, handleCurPage, handleLogoClick }) => {
               </button>
             </li>
           </ul>
-          <button className="close" onClick={() => setNavMode(false)}>
-            x
-          </button>
         </nav>
       </div>
     </header>

@@ -56,26 +56,6 @@
           left: -1px;
         }
       }
-      &:hover {
-        div {
-          background-color: $yellow;
-          &:nth-child(1) {
-            transform: rotate(0);
-            top: 0;
-            left: 0;
-          }
-          &:nth-child(2) {
-            transform: rotate(0) translateY(-50%);
-            top: 50%;
-            left: 0;
-          }
-          &:nth-child(3) {
-            width: 20px;
-            bottom: 0;
-            left: 0;
-          }
-        }
-      }
     }
   }
 
@@ -129,20 +109,40 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .header {
     .headerCont {
-      max-width: 350px;
+      max-width: 400px;
     }
     .menuCont {
       right: 25px;
       display: block;
+      .menu.navModeBtnOn {
+        div {
+          background-color: $yellow;
+          &:nth-child(1) {
+            transform: rotate(0);
+            top: 0;
+            left: 0;
+          }
+          &:nth-child(2) {
+            transform: rotate(0) translateY(-50%);
+            top: 50%;
+            left: 0;
+          }
+          &:nth-child(3) {
+            width: 20px;
+            bottom: 0;
+            left: 0;
+          }
+        }
+      }
     }
     nav {
       position: fixed;
-      top: 0;
-      right: -150px;
-      width: 30%;
+      top: 40.5px;
+      right: -250px;
+      width: 40%;
       height: 100%;
       background-color: $white;
       transition: 0.5s all;
@@ -150,7 +150,8 @@
         display: block;
         margin-top: 30px;
         li {
-          margin: 10px 10px;
+          margin: 20px 10px;
+          font-size: 1.3em;
           &::before {
             content: " - ";
           }
@@ -159,18 +160,8 @@
           bottom: 3px;
         }
       }
-      .close {
-        width: 20px;
-        height: 20px;
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        display: block;
-        z-index: 10;
-      }
-
       &.navMode {
-        right: -10px;
+        right: -12px;
       }
     }
   }

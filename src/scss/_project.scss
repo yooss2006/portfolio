@@ -2,6 +2,12 @@
 
 .Project {
   position: relative;
+  .explanation {
+    margin: 0.71em 0 1.07em;
+    font-size: 0.875em;
+    text-align: center;
+    color: nth($blue, 2);
+  }
   .buttonWrapper {
     width: 75%;
     min-height: 25em;
@@ -31,7 +37,7 @@
         height: 50%;
         padding: 1em;
         position: relative;
-        overflow: scroll;
+        overflow-y: scroll;
         box-sizing: border-box;
         font-size: 0.875em;
         header {
@@ -196,10 +202,27 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .Project {
+    @include flex($a: center, $j: center);
+    flex-direction: column;
+    h2 {
+      font-size: 2em;
+    }
     .buttonWrapper {
       width: 100%;
+      min-height: 28em;
+    }
+    .projectWrapper {
+      min-height: 24em;
+      header {
+        position: relative;
+        h4 {
+          font-size: 2em;
+          margin-bottom: 1em;
+          text-align: center;
+        }
+      }
     }
     .notionLink {
       width: 90%;

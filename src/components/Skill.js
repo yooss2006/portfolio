@@ -40,8 +40,14 @@ const Skill = () => {
               onClick={() => handleCheckBtn(item.name)}
             >
               <img
-                src={item.active ? item.img[1] : item.img[0]}
+                src={item.img[0]}
                 alt={item.name}
+                className={item.active ? "hide" : ""}
+              />
+              <img
+                src={item.img[1]}
+                alt={item.name}
+                className={item.active ? "" : "hide"}
               />
             </StyledButton>
           );

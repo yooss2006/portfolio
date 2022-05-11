@@ -35,7 +35,6 @@ function App() {
   useEffect(() => {
     if (isCardOn) {
       window.addEventListener("scroll", handleScroll);
-      console.log("랜더링");
     }
   }, []);
 
